@@ -1,3 +1,11 @@
+body {
+    font-family: 'Lobster', cursive;
+}
+
+nav {
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+}
 
 #carousel {
     margin-top: 200px;
@@ -5,4 +13,14 @@
 
 .columns.is-desktop {
     margin-top: 200px;
+}
+
+#inputButton {
+    background-color: red;
+    font-family: 'Lobster', cursive;
+    display: flex;
+    align-items: center;
+    margin-top: 20vh;
+    margin-left: 30vh;
+    font-size: 20px;
 }
