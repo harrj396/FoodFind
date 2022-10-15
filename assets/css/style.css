@@ -1,17 +1,14 @@
-body {
-    font-family: 'Lobster', cursive;
-}
 
 nav {
     font-family: 'Lobster', cursive;
-    font-size: 24px;
+    font-size: 24px !important;
 }
 
 #carousel {
     margin-top: 200px;
 }
 
-.columns.is-desktop {
+.columns.is-mobile {
     margin-top: 200px;
 }
 
@@ -20,7 +17,13 @@ nav {
     font-family: 'Lobster', cursive;
     display: flex;
     align-items: center;
-    margin-top: 20vh;
-    margin-left: 30vh;
+    margin-top: 10vw;
+    margin-left: 30vw;
     font-size: 20px;
+    border-radius: 12px;
+}
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 36px !important;
+    margin: 30px !important;
 }
