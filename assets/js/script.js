@@ -1,11 +1,3 @@
-const firstRecipeName = document.getElementById('one');
-const input = firstRecipeName || {}
-// Future Functionality
-
-
-// var userInput = document.getElementById('userSearch'); 
-// var firstCarousel = document.getElementById("carousel")
-
 //Defining custom variables
 const mealDBurl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
@@ -14,16 +6,20 @@ const mealDBurl = 'https://www.themealdb.com/api/json/v1/1/random.php';
         const response = await fetch(mealDBurl);
         const data = await response.json();
         const newRecipe  = data.meals[0].strMeal;
-        console.log(newRecipe);
         const firstRecipeName = document.getElementById('one');
-        const input = firstRecipeName || {}
-        input.textContent = newRecipe;
-        console.log(input);
+        firstRecipeName.textContent = newRecipe;
       }
 
       //Call the function
       getRecipe();
 
+      async function getRecipe() {
+        const response = await fetch(mealDBurl);
+        const data = await response.json();
+        const newRecipe  = data.meals[0].strMeal;
+        const firstRecipeName = document.getElementById('one');
+        firstRecipeName.textContent = newRecipe;
+      }
 
 
 
