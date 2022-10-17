@@ -1,3 +1,6 @@
+body {
+    background-color: blanchedalmond;
+}
 
 nav {
     font-family: 'Lobster', cursive;
@@ -25,9 +28,11 @@ h1 {
     font-size: 36px !important;
     margin: 30px !important;
 }
+
 button.is-danger:hover {
     background-color: red !important;
 }
+
 button.is-danger:active {
     background-color: orange !important;
     box-shadow: 10px 10px 10px orangered !important;
