@@ -1,44 +1,36 @@
-const firstRecipeName = document.getElementById('one');
-const input = firstRecipeName || {}
-// Future Functionality
-
-
-// var userInput = document.getElementById('userSearch'); 
-// var firstCarousel = document.getElementById("carousel")
 
 //Defining custom variables
-const mealDBurl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+const mealDBurlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php';
+const mealDBurlSearch = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
+
+var firstMealName;
 //Define async funtion to grab data from api and append it to the page
       async function getRecipeName() {
-        const response = await fetch(mealDBurl);
+        const response = await fetch(mealDBurlRandom);
         const data = await response.json();
+        console.log(data);
         const newRecipe  = data.meals[0].strMeal;
-        console.log(newRecipe);
-        const firstRecipeName = document.getElementById('one');
+        const firstRecipeName = document.getElementById('recipeName');
         const input = firstRecipeName || {}
         input.textContent = newRecipe;
-        console.log(input);
+        getFirstRecipe(newRecipe);
+        // lowCarbFunction(newRecipe);
       }
 
       //Call the function
       getRecipeName();
 
-      async function getFirstRecipe() {
-        const response = await fetch(mealDBurl);
+      async function getFirstRecipe(recipe) {
+        const response = await fetch(mealDBurlSearch + recipe);
         const data = await response.json();
         const newRecipe  = data.meals[0];
         console.log(newRecipe);
-        const firstRecipeName = document.getElementById('one');
-        const input = firstRecipeName || {}
-        input.textContent = newRecipe;
-        console.log(input);
       }
 
-getFirstRecipe();
 
 
-  // fetch('https://low-carb-recipes.p.rapidapi.com/search?name=' + foodName, options)
+  // fetch('https://low-carb-recipes.p.rapidapi.com/search?name=' + foodName)
 
   
   // Future Functionality
