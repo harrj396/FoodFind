@@ -1,35 +1,38 @@
 //Defining custom variables
-const mealDBurl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+const mealDBurlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php';
+const mealDBurlSearch = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+
 
 //Define async funtion to grab data from api and append it to the page
       async function getRecipeName() {
-        const response = await fetch(mealDBurl);
+        const response = await fetch(mealDBurlRandom);
         const data = await response.json();
+        console.log(data);
         const newRecipe  = data.meals[0].strMeal;
-        const firstRecipeName = document.getElementById('one');
-        firstRecipeName.textContent = newRecipe;
+        const firstRecipeName = document.getElementById('recipeName');
+        const input = firstRecipeName || {}
+        input.textContent = newRecipe;
+        getFirstRecipe(newRecipe);
+        // lowCarbFunction(newRecipe);
       }
 
-      //Call the function
+//Call the function
       getRecipeName();
-
-      async function getRecipe() {
-        const response = await fetch(mealDBurl);
+ 
+//Second function to grab recipe and other data
+      async function getFirstRecipe(recipe) {
+        const response = await fetch(mealDBurlSearch + recipe);
         const data = await response.json();
-        const newRecipe  = data.meals[0].strMeal;
-        const firstRecipeName = document.getElementById('one');
-        firstRecipeName.textContent = newRecipe;
+        const newRecipe  = data.meals[0];
+        console.log(newRecipe);
       }
 
-
-
-
-  // fetch('https://low-carb-recipes.p.rapidapi.com/search?name=' + foodName, options)
+// fetch('https://low-carb-recipes.p.rapidapi.com/search?name=' + foodName)
 
   
-  // Future Functionality
-  // addEventListener('submit', function(event){
-  //   event.preventDefault();
-  //   console.log(userInput.value);
+// Future Functionality
+// addEventListener('submit', function(event){
+//   event.preventDefault();
+//   console.log(userInput.value);
 
-  // })
+// })
