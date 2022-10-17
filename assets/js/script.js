@@ -1,30 +1,34 @@
+const firstRecipeName = document.getElementById('one');
+const input = firstRecipeName || {}
 // Future Functionality
+
 
 // var userInput = document.getElementById('userSearch'); 
 // var firstCarousel = document.getElementById("carousel")
 
 //Defining custom variables
-var mealDBurl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+const mealDBurl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
-//Carousel setup
-// var splide = new Splide( firstCarousel, {
-//     perPage: 3,
-//     rewind : true,
-//   } );
-  
-//   splide.mount();
+//Define async funtion to grab data from api and append it to the page
+      async function getRecipe() {
+        const response = await fetch(mealDBurl);
+        const data = await response.json();
+        const newRecipe  = data.meals[0].strMeal;
+        console.log(newRecipe);
+        const firstRecipeName = document.getElementById('one');
+        const input = firstRecipeName || {}
+        input.textContent = newRecipe;
+        console.log(input);
+      }
 
-fetch(mealDBurl)
-  .then((response) => response.json())
-  .then((data) => console.log(data.meals[0].strMeal))
-  .then((data) => console.log(data.meals[0].strMeal));
+      //Call the function
+      getRecipe();
+
+
 
 
 
   // fetch('https://low-carb-recipes.p.rapidapi.com/search?name=' + foodName, options)
-  //   .then(response => response.json())
-  //   .then(response => console.log(response))
-  //   .catch(err => console.error(err));
 
   
   // Future Functionality
