@@ -1,10 +1,8 @@
-
 //Defining custom variables
 const mealDBurlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const mealDBurlSearch = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 
-var firstMealName;
 //Define async funtion to grab data from api and append it to the page
       async function getRecipeName() {
         const response = await fetch(mealDBurlRandom);
@@ -18,9 +16,10 @@ var firstMealName;
         // lowCarbFunction(newRecipe);
       }
 
-      //Call the function
+//Call the function
       getRecipeName();
-
+ 
+//Second function to grab recipe and other data
       async function getFirstRecipe(recipe) {
         const response = await fetch(mealDBurlSearch + recipe);
         const data = await response.json();
@@ -28,14 +27,12 @@ var firstMealName;
         console.log(newRecipe);
       }
 
-
-
-  // fetch('https://low-carb-recipes.p.rapidapi.com/search?name=' + foodName)
+// fetch('https://low-carb-recipes.p.rapidapi.com/search?name=' + foodName)
 
   
-  // Future Functionality
-  // addEventListener('submit', function(event){
-  //   event.preventDefault();
-  //   console.log(userInput.value);
+// Future Functionality
+// addEventListener('submit', function(event){
+//   event.preventDefault();
+//   console.log(userInput.value);
 
-  // })
+// })
