@@ -20,17 +20,20 @@ nav {
     margin-top: 200px;
 }
 
-#inputButton {
+button.is-danger {
     font-family: 'Lobster', cursive;
     font-size: 30px;
     border-radius: 12px;
     padding: 9px;
     border: 3px black solid !important;
+    color: white !important;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 h1 {
     font-family: 'Lobster', cursive;
-    font-size: 36px !important;
-    margin: 30px !important;
+    font-size: 42px !important;
+    /* margin-left: 12vw !important; */
 }
 
 button.is-danger:hover {
@@ -43,8 +46,22 @@ button.is-danger:active {
     font-size: 28px !important;
 }
 
- @media (min-width: 1150px) {
+/* #col1 {
+    display: flex;
+    justify-content: center;
+} */
+
+.breadcrumb {
+    margin-bottom: 3vh;
+}
+/* 
+  @media (min-width: 1150px) {
     #inputButton {
         margin-left: 12vw;
+    } 
+ } */
+ @media (max-width: 500px) {
+    .navbar-dropdown {
+       display: contents; 
     }
  }
