@@ -1,24 +1,21 @@
 //Defining custom variables
 const mealDBurlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php';
 const mealDBurlSearch = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
-const lowCarbUrl = 'https://low-carb-recipes.p.rapidapi.com/search?name=';
+const lowCarbUrl = 'https://edamam-recipe-search.p.rapidapi.com/search?q=';
 
 //Define async funtion to grab data from api and append it to the page
       async function getRecipeName() {
         const response = await fetch(mealDBurlRandom);
         const data = await response.json();
         const newRecipe  = data.meals[0].strMeal;
-        const firstRecipeName = document.getElementById('recipeName');
+        const firstRecipeWord  = data.meals[0].strMeal;
+        const firstWord = firstRecipeWord.replace(/ .*/,'');
+        const mealType = data.meals[0].strArea;
+        const firstRecipeName = document.getElementById('firstRecipeName');
         firstRecipeName.innerHTML = newRecipe;
-        // const input = firstRecipeName || {}
-        // input.textContent = newRecipe;
-        // console.log(input.innerHTML)
         getFirstRecipe(newRecipe);
-        getKetoRecipe(newRecipe);
+        getKetoRecipe(mealType, firstWord);
       }
-
-//Call the function
-      getRecipeName();
  
 //Second function to grab recipe and other data
       async function getFirstRecipe(recipe) {
@@ -42,24 +39,40 @@ const lowCarbUrl = 'https://low-carb-recipes.p.rapidapi.com/search?name=';
         document.getElementById("firstRecipeImg").src = imgInput;
       }
 
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': 'f54cbceebemshaaff6c48ccd6b24p1a7c1ajsn4e2d1b0e62ae',
-          'X-RapidAPI-Host': 'low-carb-recipes.p.rapidapi.com'
-        }
-      };
-
-      async function getKetoRecipe(newFood, options){
+      async function getKetoRecipe(newFood, firstName){
         let regex = / /g;
         let result = newFood.replace(regex, "%20");
-        console.log(result)
-        let newUrl = lowCarbUrl + result;
+        console.log(firstName)
+        let newUrl = lowCarbUrl + firstName + "&random=true";
         console.log(newUrl);
-      const response = await fetch(lowCarbUrl, options);
+        const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': '3dbfc0433dmsh56b1204eaeeb95dp104faejsnc54fdda40931',
+            'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com'
+          }
+        };
+      const response = await fetch(newUrl, options);
       const data = await response.json();
-      console.log(data)
+      const secondRecipeName  = data.hits[0].recipe.label;
+      const secondRecipeImg  = data.hits[0].recipe.image;
+      const secondRecipeLink = data.hits[0].recipe.url;
+      console.log(secondRecipeImg)
+      var htmlDiv = `<p><span>${secondRecipeName}</span></p>
+      <img id="secondRecipeImg" src="${secondRecipeImg}">
+      <button id="secondButton"><a id="secondRecipeList" href="${secondRecipeLink}">Click for Recipe!</a></button>`
+
+      if(secondRecipeImg){
+        document.getElementById("secondDiv").innerHTML = htmlDiv
+      }
+
+      console.log(data.hits[0].recipe)
     }
+
+
+
+  //Call the function
+  getRecipeName();
 
   
 // Future Functionality
@@ -68,3 +81,6 @@ const lowCarbUrl = 'https://low-carb-recipes.p.rapidapi.com/search?name=';
 //   console.log(userInput.value);
 
 // })
+
+// apikey = 901b466946b7c9d2ec37e9ff51d2caeb
+// appid = e7816b7d
