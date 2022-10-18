@@ -1,10 +1,15 @@
 body {
-    background-color: blanchedalmond;
+    background-color:lightgoldenrodyellow;
 }
 
 nav {
     font-family: 'Lobster', cursive;
     font-size: 24px !important;
+    background-color: wheat !important;
+}
+
+.background {
+    opacity: 70%;
 }
 
 #carousel {
@@ -16,7 +21,6 @@ nav {
 }
 
 #inputButton {
-    /* background-color: red; */
     font-family: 'Lobster', cursive;
     font-size: 30px;
     border-radius: 12px;
