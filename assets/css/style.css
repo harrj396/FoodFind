@@ -1,3 +1,6 @@
+body {
+    background-color: blanchedalmond;
+}
 
 nav {
     font-family: 'Lobster', cursive;
@@ -13,17 +16,31 @@ nav {
 }
 
 #inputButton {
-    background-color: red;
+    /* background-color: red; */
     font-family: 'Lobster', cursive;
-    display: flex;
-    align-items: center;
-    margin-top: 10vw;
-    margin-left: 30vw;
-    font-size: 20px;
+    font-size: 30px;
     border-radius: 12px;
+    padding: 9px;
+    border: 3px black solid !important;
 }
 h1 {
     font-family: 'Lobster', cursive;
     font-size: 36px !important;
     margin: 30px !important;
 }
+
+button.is-danger:hover {
+    background-color: red !important;
+}
+
+button.is-danger:active {
+    background-color: orange !important;
+    box-shadow: 10px 10px 10px orangered !important;
+    font-size: 28px !important;
+}
+
+ @media (min-width: 1150px) {
+    #inputButton {
+        margin-left: 12vw;
+    }
+ }
