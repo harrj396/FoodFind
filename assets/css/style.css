@@ -13,15 +13,12 @@ nav {
 }
 
 .background {
-    opacity: 70%;
+    opacity: 50%;
 }
 
-#carousel {
-    margin-top: 200px;
-}
 
-.columns.is-mobile {
-    margin-top: 200px;
+#inputButton {
+    margin-top: -15vh;
 }
 
 button.is-danger {
@@ -50,14 +47,16 @@ button.is-danger:active {
     font-size: 28px !important;
 }
 
-/* #col1 {
-    display: flex;
-    justify-content: center;
-} */
 
 .breadcrumb {
     margin-bottom: 3vh;
 }
+
+#About {
+    margin-top: 3vh;
+}
+
+
 /* 
   @media (min-width: 1150px) {
     #inputButton {
