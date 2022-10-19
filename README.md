@@ -1,7 +1,15 @@
 # FoodFind
-This app will help you find healthy alternatives to food at your local grocery store.
-Brownie guy
+This app will help you find a new recipe to finally easily figure out what you're having for dinner.
 
+#
+## How do I use it?
+To use our app, all you have to do is click on the big red randomize button(pictured below)
+#
+![](./assets/images/Screen%20Shot%202022-10-19%20at%2010.35.02%20AM.png)
+#
+
+## Screenshots of Example Recipes
+![](./assets/)
 ## Credits
 This site was made with love by the following people: 
 
