@@ -2,6 +2,10 @@
    visibility: hidden;
 }
 
+* {
+    margin-top: px;
+}
+
 body {
     background-color:lightgoldenrodyellow;
 }
@@ -47,11 +51,6 @@ button.is-danger:active {
     background-color: orange !important;
     box-shadow: 10px 10px 10px orangered !important;
     font-size: 28px !important;
-}
-
-
-.breadcrumb {
-    margin-bottom: 3vh;
 }
 
 #About {
