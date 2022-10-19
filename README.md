@@ -8,8 +8,8 @@ To use our app, all you have to do is click on the big red randomize button(pict
 ![](./assets/images/Screen%20Shot%202022-10-19%20at%2010.35.02%20AM.png)
 #
 
-## Screenshots of Example Recipes
-![](./assets/)
+## Example Recipes
+![](https://raw.githubusercontent.com/harrj396/FoodFind/main/assets/images/FoodFindMeals.PNG)
 ## Credits
 This site was made with love by the following people: 
 
