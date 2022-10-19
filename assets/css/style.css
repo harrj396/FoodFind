@@ -90,6 +90,20 @@ button.is-danger:active {
     margin-top: -80px;
 }
 
+.sharkTankDiv {
+    display: flex;
+}
+
+.sharkTank {
+    margin-left: 55vw;
+    display: flex;
+    justify-content: right;
+}
+
+.contact {
+    white-space: nowrap;
+}
+
 /* 
   @media (min-width: 1150px) {
     #inputButton {
