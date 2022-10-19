@@ -50,7 +50,7 @@ const randomizeButton = document.getElementById("inputButton");
       const secondRecipeLink = data.hits[0].recipe.url;
       var htmlDiv = `<h1><span>${secondRecipeName}</span></h1>
       <img width="100%" height="800px" class="imageSize" id="secondRecipeImg" src="${secondRecipeImg}">
-      <button id="secondButton" class="button is-danger"><a id="secondRecipeList" href="${secondRecipeLink}">Click for Recipe!</a></button>`
+      <button id="secondButton" class="button is-danger"><a id="secondRecipeList" href="${secondRecipeLink}" target="_blank" rel="noopener noreferrer">Click for Recipe!</a></button>`
       if(secondRecipeImg){
         document.getElementById("secondDiv").innerHTML = htmlDiv
       }
