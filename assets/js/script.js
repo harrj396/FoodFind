@@ -49,7 +49,7 @@ const randomizeButton = document.getElementById("inputButton");
       const secondRecipeImg  = data.hits[0].recipe.image;
       const secondRecipeLink = data.hits[0].recipe.url;
       var htmlDiv = `<h1><span>${secondRecipeName}</span></h1>
-      <img width="100%" height="800px" id="secondRecipeImg" src="${secondRecipeImg}">
+      <img width="100%" height="800px" class="imageSize" id="secondRecipeImg" src="${secondRecipeImg}">
       <button id="secondButton" class="button is-danger"><a id="secondRecipeList" href="${secondRecipeLink}">Click for Recipe!</a></button>`
       if(secondRecipeImg){
         document.getElementById("secondDiv").innerHTML = htmlDiv
@@ -59,6 +59,10 @@ const randomizeButton = document.getElementById("inputButton");
   //Call the function on the click of the button and prevent the page from reloading
 randomizeButton.addEventListener('click', function(event){
   event.preventDefault();
+  document.querySelector('.instructions').classList.add('hide');
+  document.querySelector('.instructions2').classList.add('hide');
+  document.getElementById('firstDiv').classList.remove('hide');
+  document.getElementById('firstYoutube').classList.remove('hide');
   getRecipeName(); 
 })
 //Had to end it here
