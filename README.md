@@ -1,7 +1,9 @@
 # FoodFind
 This app will help you find a new recipe to finally easily figure out what you're having for dinner.
 
-#
+## Link
+Follow this link to access FoodFind!  (https://harrj396.github.io/FoodFind/)
+
 ## How do I use it?
 To use our app, all you have to do is click on the big red randomize button(pictured below)
 #
